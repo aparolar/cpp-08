@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:43:11 by aparolar          #+#    #+#             */
-/*   Updated: 2022/08/08 11:59:57 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:14:28 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,12 @@ class Span
 		Span(void);
 
 	public:
+		Span();
+		Span(Span const &toCopy);
 		Span(unsigned int N);
 		~Span();
+
+		Span& operator=(Span const &toCopy);
 
 		std::vector<int> getVector() const;
 		unsigned int getLength() const;

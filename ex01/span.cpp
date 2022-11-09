@@ -6,15 +6,31 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:43:04 by aparolar          #+#    #+#             */
-/*   Updated: 2022/08/08 12:00:34 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:17:04 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
+Span::Span()
+	: _length(0)
+{}
+
+Span::Span(Span const &toCopy)
+{
+	*this = toCopy;
+}
+
 Span::Span(unsigned int N) : _length(N) {}
 
 Span::~Span() {}
+
+Span& Span::operator=(Span const &toCopy)
+{
+	this->_length = toCopy.getLength();
+	this->_vector = toCopy.getVector();
+	return *this;
+}
 
 unsigned int Span::getLength(void) const
 {
