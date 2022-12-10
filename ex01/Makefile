@@ -1,13 +1,14 @@
 NAME		=	a.out
-CXX			=	clang++ $(CXXFLAGS) -std=c++98 -pedantic
-42FLAGS		=	-Wall -Werror -Wextra
-CXXFLAGS 	=	$(42FLAGS)
+
 LDFLAGS		=	-fsanitize=address
+42FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS 	=	$(42FLAGS)
+CXX			=	clang++
 SRCS		=	main.cpp span.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(CXX) $(SRCS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 all:			$(NAME)
 

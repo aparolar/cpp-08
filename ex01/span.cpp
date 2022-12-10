@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:43:04 by aparolar          #+#    #+#             */
-/*   Updated: 2022/11/09 20:17:04 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/10 22:43:28 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void Span::addNumber(int n)
 	_vector.push_back(n);
 }
 
-void	Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	unsigned int		spaceLeft;
 	std::vector<int>	tmp(begin, end);
