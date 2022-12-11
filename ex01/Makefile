@@ -15,11 +15,17 @@ all:			$(NAME)
 re:				fclean all
 
 clean:			
-				rm *.o
+				@rm -f *.o
 
 fclean:			clean
-				rm -fr .vscode
-				rm -f $(NAME)
+				@rm -fr .vscode
+				@rm -f $(NAME)
+
+git_push:		fclean
+				git status ; sleep 3
+				git add .
+				git commit -m "update"
+				git push
 
 .phony:			all re clean fclean
 				
