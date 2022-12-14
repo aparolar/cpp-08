@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:04:50 by aparolar          #+#    #+#             */
-/*   Updated: 2022/08/08 12:13:56 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/12 21:50:44 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,38 @@ class MutantStack : public std::stack<T>
 	public:
 		typedef typename std::deque<T>::iterator iterator;
 
-		MutantStack();
-		~MutantStack();
+		MutantStack(void);
+		MutantStack(MutantStack const &toCopy);
+		~MutantStack(void);
+		MutantStack &operator = (MutantStack const &toCopy);
 		
 		iterator begin() { return this->c.begin(); };
 		iterator end() { return this->c.end(); };
 };
 
 template <typename T>
+MutantStack<T>::MutantStack(void)
+{
 
-MutantStack<T>::MutantStack() {}
+}
 
 template <typename T>
+MutantStack<T>::MutantStack(MutantStack const &toCopy)
+{
+	*this = toCopy;
+}
 
-MutantStack<T>::~MutantStack() {}
+template <typename T>
+MutantStack<T> &MutantStack<T>::operator = (MutantStack const &toCopy)
+{
+	this->c = toCopy.c;
+	return *this;
+}
+
+template <typename T>
+MutantStack<T>::~MutantStack(void)
+{
+
+}
 
 #endif

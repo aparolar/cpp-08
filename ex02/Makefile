@@ -1,24 +1,24 @@
 NAME		=	a.out
-CXX			=	clang++ $(CXXFLAGS) -std=c++98 -pedantic
-42FLAGS		=	-Wall -Werror -Wextra
+42FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
+LDFLAGS		=	-fsanitize=address -g3
 CXXFLAGS 	=	$(42FLAGS)
-LDFLAGS		=	-fsanitize=address
+CXX			=	clang++
 SRCS		=	main.cpp mutantstack.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(CXX) $(SRCS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 all:			$(NAME)
 
 re:				fclean all
 
 clean:			
-				rm *.o
+				@rm -f *.o
 
 fclean:			clean
-				rm -fr .vscode
-				rm -f $(NAME)
+				@rm -fr .vscode
+				@rm -f $(NAME)
 
 .phony:			all re clean fclean
 				

@@ -1,7 +1,7 @@
 NAME		=	a.out
 
-LDFLAGS		=	-fsanitize=address
 42FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
+LDFLAGS		=	-fsanitize=address
 CXXFLAGS 	=	$(42FLAGS)
 CXX			=	clang++
 SRCS		=	main.cpp span.cpp
