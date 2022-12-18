@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:43:04 by aparolar          #+#    #+#             */
-/*   Updated: 2022/12/10 22:43:28 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/18 11:21:27 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ Span::Span(Span const &toCopy)
 	*this = toCopy;
 }
 
-Span::Span(unsigned int N) : _length(N) {}
+Span::Span(unsigned int N)
+	: _length(N) {}
 
 Span::~Span() {}
 
 Span& Span::operator=(Span const &toCopy)
 {
-	this->_length = toCopy.getLength();
-	this->_vector = toCopy.getVector();
+	this->_length = toCopy._length;
+	this->_vector = toCopy._vector;
 	return *this;
 }
 
@@ -54,7 +55,7 @@ void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 	unsigned int		spaceLeft;
 	std::vector<int>	tmp(begin, end);
 
-	spaceLeft = _length - (int)_vector.size();
+	spaceLeft = _length - static_cast<int>(_vector.size());
 	if (tmp.size() > spaceLeft)
 		throw NotEnoughSpace();
 	copy(tmp.begin(), tmp.end(), std::back_inserter(_vector));

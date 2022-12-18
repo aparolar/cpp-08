@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:43:11 by aparolar          #+#    #+#             */
-/*   Updated: 2022/12/10 22:49:36 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/18 11:17:45 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <array>
 #include <limits.h>
 
 class Span

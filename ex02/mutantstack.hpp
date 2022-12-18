@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:04:50 by aparolar          #+#    #+#             */
-/*   Updated: 2022/12/12 21:50:44 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:20:08 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 #include <iostream>
 #include <stack>
-#include <iterator>
-#include <deque>
-#include <list>
-#include <string>
 
 template <typename T>
 class MutantStack : public std::stack<T>

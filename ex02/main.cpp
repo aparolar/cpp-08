@@ -6,11 +6,12 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:07:29 by aparolar          #+#    #+#             */
-/*   Updated: 2022/08/08 12:09:38 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:18:30 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
+#include <list>
 
 int main(void)
 {
